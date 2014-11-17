@@ -10,6 +10,7 @@
 		40F6161A1A17C2630000825E /* FluentConstraints.h in Headers */ = {isa = PBXBuildFile; fileRef = 40F616191A17C2630000825E /* FluentConstraints.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40F616201A17C2630000825E /* FluentConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F616141A17C2630000825E /* FluentConstraints.framework */; };
 		40F616271A17C2630000825E /* FluentConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F616261A17C2630000825E /* FluentConstraintsTests.swift */; };
+		40F616311A17C2AD0000825E /* FluentConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F616301A17C2AD0000825E /* FluentConstraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		40F6161F1A17C2630000825E /* FluentConstraintsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluentConstraintsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F616251A17C2630000825E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F616261A17C2630000825E /* FluentConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentConstraintsTests.swift; sourceTree = "<group>"; };
+		40F616301A17C2AD0000825E /* FluentConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				40F616191A17C2630000825E /* FluentConstraints.h */,
+				40F616301A17C2AD0000825E /* FluentConstraints.swift */,
 				40F616171A17C2630000825E /* Supporting Files */,
 			);
 			path = FluentConstraints;
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F616311A17C2AD0000825E /* FluentConstraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -307,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,6 +324,7 @@
 		40F6162B1A17C2630000825E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -329,12 +334,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		40F6162C1A17C2630000825E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
