@@ -41,6 +41,24 @@ public class FluentConstraint {
 
     // MARK: attribute functions
 
+    public var left: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .Left
+        } else {
+            self.secondAttribute = .Left
+        }
+        return self
+    }
+
+    public var right: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .Right
+        } else {
+            self.secondAttribute = .Right
+        }
+        return self
+    }
+
     public var top: FluentConstraint {
         if secondItem == nil {
             self.firstAttribute = .Top
@@ -50,8 +68,66 @@ public class FluentConstraint {
         return self
     }
 
+    public var bottom: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .Bottom
+        } else {
+            self.secondAttribute = .Bottom
+        }
+        return self
+    }
+
+    public var leading: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .Leading
+        } else {
+            self.secondAttribute = .Leading
+        }
+        return self
+    }
+
+    public var trailing: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .Trailing
+        } else {
+            self.secondAttribute = .Trailing
+        }
+        return self
+    }
+
     public var width: FluentConstraint {
-        self.firstAttribute = .Width
+        if secondItem == nil {
+            self.firstAttribute = .Width
+        } else {
+            self.secondAttribute = .Width
+        }
+        return self
+    }
+
+    public var height: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .Height
+        } else {
+            self.secondAttribute = .Height
+        }
+        return self
+    }
+
+    public var centerX: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .CenterX
+        } else {
+            self.secondAttribute = .CenterX
+        }
+        return self
+    }
+
+    public var centerY: FluentConstraint {
+        if secondItem == nil {
+            self.firstAttribute = .CenterY
+        } else {
+            self.secondAttribute = .CenterY
+        }
         return self
     }
 

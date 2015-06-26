@@ -31,10 +31,64 @@ class FluentConstraintsTests: XCTestCase {
 
     // MARK: attribute tests
 
+    func testLeftAttribute() {
+        let contraint = FluentConstraint(firstView).left.equalTo(secondView).left.build()
+        expect(contraint.firstAttribute) == NSLayoutAttribute.Left
+        expect(contraint.secondAttribute) == NSLayoutAttribute.Left
+    }
+
+    func testRightAttribute() {
+        let contraint = FluentConstraint(firstView).right.equalTo(secondView).right.build()
+        expect(contraint.firstAttribute) == NSLayoutAttribute.Right
+        expect(contraint.secondAttribute) == NSLayoutAttribute.Right
+    }
+
     func testTopAttribute() {
         let constraint = FluentConstraint(firstView).top.equalTo(secondView).top.build()
         expect(constraint.firstAttribute) == NSLayoutAttribute.Top
         expect(constraint.secondAttribute) == NSLayoutAttribute.Top
+    }
+
+    func testBottomAttribute() {
+        let constraint = FluentConstraint(firstView).bottom.equalTo(secondView).bottom.build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.Bottom
+        expect(constraint.secondAttribute) == NSLayoutAttribute.Bottom
+    }
+
+    func testLeadingAttribute() {
+        let constraint = FluentConstraint(firstView).leading.equalTo(secondView).leading.build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.Leading
+        expect(constraint.secondAttribute) == NSLayoutAttribute.Leading
+    }
+
+    func testTrailingAttribute() {
+        let constraint = FluentConstraint(firstView).trailing.equalTo(secondView).trailing.build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.Trailing
+        expect(constraint.secondAttribute) == NSLayoutAttribute.Trailing
+    }
+
+    func testWidthAttribute() {
+        let constraint = FluentConstraint(firstView).width.equalTo(secondView).width.build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.Width
+        expect(constraint.secondAttribute) == NSLayoutAttribute.Width
+    }
+
+    func testHeightAttribute() {
+        let constraint = FluentConstraint(firstView).height.equalTo(secondView).height.build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.Height
+        expect(constraint.secondAttribute) == NSLayoutAttribute.Height
+    }
+
+    func testCenterXAttribute() {
+        let constraint = FluentConstraint(firstView).centerX.equalTo(secondView).centerX.build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.CenterX
+        expect(constraint.secondAttribute) == NSLayoutAttribute.CenterX
+    }
+
+    func testCenterYAttribute() {
+        let constraint = FluentConstraint(firstView).centerY.equalTo(secondView).centerY.build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.CenterY
+        expect(constraint.secondAttribute) == NSLayoutAttribute.CenterY
     }
 
     func testBaselineAttribute() {
