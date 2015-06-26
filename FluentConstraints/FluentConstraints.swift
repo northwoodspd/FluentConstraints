@@ -262,4 +262,15 @@ public class FluentConstraint {
         }
         return self
     }
+
+    // MARK: multiplier
+
+    public func times(multiplier: CGFloat) -> FluentConstraint {
+        if secondItem == nil {
+            self.multiplier = 1.0 / multiplier
+        } else {
+            self.multiplier = multiplier
+        }
+        return self
+    }
 }

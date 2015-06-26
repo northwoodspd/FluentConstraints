@@ -215,4 +215,16 @@ class FluentConstraintsTests: XCTestCase {
         let constraint = FluentConstraint(firstView).width.lessThanOrEqualTo.height.build()
         expect(constraint.secondItem as? UIView) == firstView
     }
+
+    // MARK: multiplier
+
+    func testMultiplierWhenSpecifiedAfterRelation() {
+        let constraint = FluentConstraint(firstView).width.equalTo.height.times(1.25).build()
+        expect(constraint.multiplier) == 1.25
+    }
+
+    func testMultiplierIsReciprocalWhenSpecifiedBeforeRelation() {
+        let constraint = FluentConstraint(firstView).width.times(1.25).equalTo.height.build()
+        expect(constraint.multiplier).to(beCloseTo(1.0 / 1.25, within: 0.0001))
+    }
 }
