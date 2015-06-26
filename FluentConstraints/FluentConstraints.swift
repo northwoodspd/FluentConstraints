@@ -56,13 +56,13 @@ public class FluentConstraint {
     // MARK: relation functions
 
     public func equalTo(view: UIView) -> FluentConstraint {
-        relation = .Equal
-        secondItem = view
+        self.relation = .Equal
+        self.secondItem = view
         return self
     }
 
     public func equalTo(constant: Float) -> FluentConstraint {
-        relation = .Equal
+        self.relation = .Equal
         self.constant = constant
         return self
     }
@@ -71,15 +71,15 @@ public class FluentConstraint {
 
     public var top: FluentConstraint {
         if secondItem == nil {
-            firstAttribute = .Top
+            self.firstAttribute = .Top
         } else {
-            secondAttribute = .Top
+            self.secondAttribute = .Top
         }
         return self
     }
 
     public var width: FluentConstraint {
-        firstAttribute = .Width
+        self.firstAttribute = .Width
         return self
     }
 }
