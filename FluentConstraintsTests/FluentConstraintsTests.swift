@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import Nimble
 
 import FluentConstraints
 
@@ -25,32 +26,32 @@ class FluentConstraintsTests: XCTestCase {
 
     func testInitializerArgumentIsConstraintFirstItem() {
         let constraint = FluentConstraint(firstView!).top.equalTo(secondView!).top.build()
-        XCTAssertEqual(constraint.firstItem as! UIView, firstView!, "Expected constraint's firstItem to be firstView")
+        expect(constraint.firstItem as? UIView) == firstView!
     }
 
     // MARK: attribute tests
 
     func testTopAttribute() {
         let constraint = FluentConstraint(firstView!).top.equalTo(secondView!).top.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.Top, "Expected constraint's firstAttribute to be .Top")
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.Top, "Expected constraint's secondAttribute to be .Top")
+        expect(constraint.firstAttribute) == NSLayoutAttribute.Top
+        expect(constraint.secondAttribute) == NSLayoutAttribute.Top
     }
 
     // MARK: relation tests
 
     func testEqualToRelation() {
         let constraint = FluentConstraint(firstView!).top.equalTo(secondView!).top.build()
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal, "Expected constraint's relation to be .Equal")
+        expect(constraint.relation) == NSLayoutRelation.Equal
     }
 
     func testEqualToArgumentIsConstraintSecondItem() {
         let constraint = FluentConstraint(firstView!).top.equalTo(secondView!).top.build()
-        XCTAssertNotNil(constraint.secondItem, "Constraint's secondItem should not be nil")
-        XCTAssertEqual(constraint.secondItem! as! UIView, self.secondView!, "Expected constraint's secondItem to be secondView")
+        expect(constraint.secondItem).notTo(beNil())
+        expect(constraint.secondItem as? UIView) == secondView!
     }
 
     func testEqualToWithNumberAssignsConstant() {
         let constraint = FluentConstraint(firstView!).width.equalTo(10).build()
-        XCTAssertEqual(constraint.constant, CGFloat(10.0))
+        expect(constraint.constant) == CGFloat(10.0)
     }
 }
