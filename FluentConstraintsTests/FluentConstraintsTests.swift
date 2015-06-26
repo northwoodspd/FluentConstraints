@@ -239,4 +239,16 @@ class FluentConstraintsTests: XCTestCase {
         let constraint = FluentConstraint(firstView).width.equalTo(10).build()
         expect(constraint.priority) == 1000
     }
+
+    // MARK: activate()
+
+    func testActivateOnFluentConstraint() {
+        let constraint = FluentConstraint(firstView).width.equalTo(10).activate()
+        expect(constraint.active) == true
+    }
+
+    func testBuildingAloneDoesNotActivate() {
+        let constraint = FluentConstraint(firstView).width.equalTo(10).build()
+        expect(constraint.active) == false
+    }
 }

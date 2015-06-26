@@ -28,6 +28,12 @@ public class FluentConstraint {
         return constraint
     }
 
+    public func activate() -> NSLayoutConstraint {
+        let constraint = build()
+        constraint.active = true
+        return constraint
+    }
+
     // MARK: relation functions
 
     public func equalTo(view: UIView) -> FluentConstraint {
