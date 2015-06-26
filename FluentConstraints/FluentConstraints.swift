@@ -14,15 +14,15 @@ public class FluentConstraint {
     var relation = NSLayoutRelation.Equal
     var secondItem: UIView?
     var secondAttribute = NSLayoutAttribute.NotAnAttribute
-    var multiplier: Float = 1.0
-    var constant: Float = 0.0
+    var multiplier: CGFloat = 1.0
+    var constant: CGFloat = 0.0
 
     public init(_ view: UIView) {
         firstItem = view
     }
 
     public func build() -> NSLayoutConstraint {
-        return NSLayoutConstraint(item: firstItem, attribute: firstAttribute, relatedBy: relation, toItem: secondItem, attribute: secondAttribute, multiplier: CGFloat(multiplier), constant: CGFloat(constant))
+        return NSLayoutConstraint(item: firstItem, attribute: firstAttribute, relatedBy: relation, toItem: secondItem, attribute: secondAttribute, multiplier: multiplier, constant: constant)
     }
 
     // MARK: relation functions
@@ -33,7 +33,7 @@ public class FluentConstraint {
         return self
     }
 
-    public func equalTo(constant: Float) -> FluentConstraint {
+    public func equalTo(constant: CGFloat) -> FluentConstraint {
         self.relation = .Equal
         self.constant = constant
         return self
@@ -51,7 +51,7 @@ public class FluentConstraint {
         return self
     }
 
-    public func greaterThanOrEqualTo(constant: Float) -> FluentConstraint {
+    public func greaterThanOrEqualTo(constant: CGFloat) -> FluentConstraint {
         self.relation = .GreaterThanOrEqual
         self.constant = constant
         return self
@@ -69,7 +69,7 @@ public class FluentConstraint {
         return self
     }
 
-    public func lessThanOrEqualTo(constant: Float) -> FluentConstraint {
+    public func lessThanOrEqualTo(constant: CGFloat) -> FluentConstraint {
         self.relation = .LessThanOrEqual
         self.constant = constant
         return self
