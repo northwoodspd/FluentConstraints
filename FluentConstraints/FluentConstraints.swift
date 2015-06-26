@@ -289,4 +289,22 @@ public class FluentConstraint {
         self.priority = priority
         return self
     }
+
+    // MARK: convenience functions
+
+    public func centeredHorizontallyOn(secondView: UIView) -> FluentConstraint {
+        self.firstAttribute = .CenterX
+        self.relation = .Equal
+        self.secondView = secondView
+        self.secondAttribute = .CenterX
+        return self
+    }
+
+    public func centeredVerticallyOn(secondView: UIView) -> FluentConstraint {
+        self.firstAttribute = .CenterY
+        self.relation = .Equal
+        self.secondView = secondView
+        self.secondAttribute = .CenterY
+        return self
+    }
 }

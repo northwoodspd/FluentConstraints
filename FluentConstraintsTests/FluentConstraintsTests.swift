@@ -251,4 +251,22 @@ class FluentConstraintsTests: XCTestCase {
         let constraint = FluentConstraint(firstView).width.equalTo(10).build()
         expect(constraint.active) == false
     }
+
+    // MARK: convenience functions
+
+    func testCenteredHorizontallyOn() {
+        let constraint = FluentConstraint(firstView).centeredHorizontallyOn(secondView).build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.CenterX
+        expect(constraint.relation) == NSLayoutRelation.Equal
+        expect(constraint.secondItem as? UIView) == secondView
+        expect(constraint.secondAttribute) == NSLayoutAttribute.CenterX
+    }
+
+    func testCenteredVerticallyOn() {
+        let constraint = FluentConstraint(firstView).centeredVerticallyOn(secondView).build()
+        expect(constraint.firstAttribute) == NSLayoutAttribute.CenterY
+        expect(constraint.relation) == NSLayoutRelation.Equal
+        expect(constraint.secondItem as? UIView) == secondView
+        expect(constraint.secondAttribute) == NSLayoutAttribute.CenterY
+    }
 }
