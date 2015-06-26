@@ -169,6 +169,11 @@ class FluentConstraintsTests: XCTestCase {
         expect(constraint.constant) == CGFloat(10.0)
     }
 
+    func testEqualToWithoutArgumentIsSelfReference() {
+        let constraint = FluentConstraint(firstView).width.equalTo.height.build()
+        expect(constraint.secondItem as? UIView) == firstView
+    }
+
     func testGreaterThanOrEqualToRelation() {
         let constraint = FluentConstraint(firstView).top.greaterThanOrEqualTo(secondView).top.build()
         expect(constraint.relation) == NSLayoutRelation.GreaterThanOrEqual
@@ -185,6 +190,11 @@ class FluentConstraintsTests: XCTestCase {
         expect(constraint.constant) == CGFloat(10.0)
     }
 
+    func testGreaterThanOrEqualToWithoutArgumentIsSelfReference() {
+        let constraint = FluentConstraint(firstView).width.greaterThanOrEqualTo.height.build()
+        expect(constraint.secondItem as? UIView) == firstView
+    }
+
     func testLessThanOrEqualToRelation() {
         let constraint = FluentConstraint(firstView).top.lessThanOrEqualTo(secondView).top.build()
         expect(constraint.relation) == NSLayoutRelation.LessThanOrEqual
@@ -199,5 +209,10 @@ class FluentConstraintsTests: XCTestCase {
     func testLessThanOrEqualToArgumentIsConstant() {
         let constraint = FluentConstraint(firstView).width.lessThanOrEqualTo(10).build()
         expect(constraint.constant) == CGFloat(10.0)
+    }
+
+    func testLessThanOrEqualToWithoutArgumentIsSelfReference() {
+        let constraint = FluentConstraint(firstView).width.lessThanOrEqualTo.height.build()
+        expect(constraint.secondItem as? UIView) == firstView
     }
 }

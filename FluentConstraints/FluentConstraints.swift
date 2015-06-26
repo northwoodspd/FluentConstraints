@@ -39,6 +39,12 @@ public class FluentConstraint {
         return self
     }
 
+    public var equalTo: FluentConstraint {
+        self.relation = .Equal
+        self.secondItem = self.firstItem
+        return self
+    }
+
     public func greaterThanOrEqualTo(view: UIView) -> FluentConstraint {
         self.relation = .GreaterThanOrEqual
         self.secondItem = view
@@ -51,6 +57,12 @@ public class FluentConstraint {
         return self
     }
 
+    public var greaterThanOrEqualTo: FluentConstraint {
+        self.relation = .GreaterThanOrEqual
+        self.secondItem = self.firstItem
+        return self
+    }
+
     public func lessThanOrEqualTo(view: UIView) -> FluentConstraint {
         self.relation = .LessThanOrEqual
         self.secondItem = view
@@ -60,6 +72,12 @@ public class FluentConstraint {
     public func lessThanOrEqualTo(constant: Float) -> FluentConstraint {
         self.relation = .LessThanOrEqual
         self.constant = constant
+        return self
+    }
+
+    public var lessThanOrEqualTo: FluentConstraint {
+        self.relation = .LessThanOrEqual
+        self.secondItem = self.firstItem
         return self
     }
 
