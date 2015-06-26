@@ -37,6 +37,11 @@ class FluentConstraintSetTests: XCTestCase {
         expect(constraints).to(allPass({ ($0!.secondItem as? UIView) == self.secondView }))
     }
 
+    func testAsView() {
+        let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).build()
+        expect(constraints).to(allPass({ ($0!.secondItem as? UIView) == self.secondView }))
+    }
+
     // MARK: build collections of constraints
 
     func testCentered() {
@@ -44,6 +49,13 @@ class FluentConstraintSetTests: XCTestCase {
         expect(constraints.count) == 2
         expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.CenterX }) == true
         expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.CenterY }) == true
+    }
+
+    func testSameSize() {
+        let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).build()
+        expect(constraints.count) == 2
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Width }) == true
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Height }) == true
     }
 
     func testInset() {

@@ -34,11 +34,21 @@ public class FluentConstraintSet {
         return self
     }
 
+    public func asView(view: UIView) -> FluentConstraintSet {
+        return onView(view)
+    }
+
     // MARK: builds collections of fluent constraints
 
     public var centered: FluentConstraintSet {
         constraints.append(fluentConstraintForView(self.firstView, attribute: .CenterX))
         constraints.append(fluentConstraintForView(self.firstView, attribute: .CenterY))
+        return self
+    }
+
+    public var sameSize: FluentConstraintSet {
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Width))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Height))
         return self
     }
 
