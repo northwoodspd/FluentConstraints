@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EA9F9595-68D7-4BB1-A617-1DB0D3E335FB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FluentConstraints</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>38045E5FDC8E81EE7F3089D0B2E34E2173EF829C</key>
+		<string>https://github.com/northwoodspd/FluentConstraints.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FluentConstraints.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>38045E5FDC8E81EE7F3089D0B2E34E2173EF829C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/northwoodspd/FluentConstraints.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>38045E5FDC8E81EE7F3089D0B2E34E2173EF829C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38045E5FDC8E81EE7F3089D0B2E34E2173EF829C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FluentConstraints</string>
+		</dict>
+	</array>
+</dict>
+</plist>
