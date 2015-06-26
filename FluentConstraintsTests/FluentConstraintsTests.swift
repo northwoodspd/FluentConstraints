@@ -31,7 +31,7 @@ class FluentConstraintsTests: XCTestCase {
 
     func testInitializerArgumentIsConstraintFirstItem() {
         let constraint = FluentConstraint(firstView!).top.equalTo(secondView!).top.add()
-        XCTAssertEqual(constraint.firstItem as UIView, firstView!, "Expected constraint's firstItem to be firstView")
+        XCTAssertEqual(constraint.firstItem as! UIView, firstView!, "Expected constraint's firstItem to be firstView")
     }
 
     func testAddAddsConstraintToContainingView() {
