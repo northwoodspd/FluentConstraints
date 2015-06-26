@@ -41,7 +41,18 @@ public class FluentConstraintSet {
         constraints.append(fluentConstraintForView(self.firstView, attribute: .CenterY))
         return self
     }
+
+    public func inset(insets: UIEdgeInsets) -> FluentConstraintSet {
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Left, constant: insets.left))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: insets.right))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Top, constant: insets.top))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: insets.bottom))
+
         return self
+    }
+
+    public func inset(constant: CGFloat) -> FluentConstraintSet {
+        return inset(UIEdgeInsets(top: constant, left: constant, bottom: constant, right: constant))
     }
 
     func fluentConstraintForView(view: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0) -> FluentConstraint {
