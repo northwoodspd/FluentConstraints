@@ -3,7 +3,7 @@
 //  FluentConstraints
 //
 //  Created by Steve Madsen on 11/15/14.
-//  Copyright (c) 2014 Light Year Software, LLC. All rights reserved.
+//  Copyright (c) 2015 Northwoods Consulting Partners. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
