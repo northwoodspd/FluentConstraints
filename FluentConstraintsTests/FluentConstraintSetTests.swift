@@ -24,18 +24,27 @@ class FluentConstraintSetTests: XCTestCase {
         secondView = UIView()
     }
 
-    func testCenteredOn() {
-        let constraints = FluentConstraintSet(firstView).centeredOn(secondView).build()
+    // MARK: relationship to view
+
+    func testInSuperview() {
+        secondView.addSubview(firstView)
+        let constraints = FluentConstraintSet(firstView).centered.inSuperview.build()
+        expect(constraints).to(allPass({ ($0!.secondItem as? UIView) == self.secondView }))
+    }
+
+    func testOnView() {
+        let constraints = FluentConstraintSet(firstView).centered.onView(secondView).build()
+        expect(constraints).to(allPass({ ($0!.secondItem as? UIView) == self.secondView }))
+    }
+
+    // MARK: build collections of constraints
+
+    func testCentered() {
+        let constraints = FluentConstraintSet(firstView).centered.onView(secondView).build()
         expect(constraints.count) == 2
         expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.CenterX }) == true
         expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.CenterY }) == true
     }
 
-    func testCenteredInSuperview() {
-        secondView.addSubview(firstView)
-        let constraints = FluentConstraintSet(firstView).centeredInSuperview.build()
-        expect(constraints.count) == 2
-        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.CenterX }) == true
-        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.CenterY }) == true
     }
 }
