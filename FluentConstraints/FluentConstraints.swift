@@ -16,13 +16,16 @@ public class FluentConstraint {
     var secondAttribute = NSLayoutAttribute.NotAnAttribute
     var multiplier: CGFloat = 1.0
     var constant: CGFloat = 0.0
+    var priority: UILayoutPriority = 1000.0
 
     public init(_ view: UIView) {
         firstItem = view
     }
 
     public func build() -> NSLayoutConstraint {
-        return NSLayoutConstraint(item: firstItem, attribute: firstAttribute, relatedBy: relation, toItem: secondItem, attribute: secondAttribute, multiplier: multiplier, constant: constant)
+        let constraint = NSLayoutConstraint(item: firstItem, attribute: firstAttribute, relatedBy: relation, toItem: secondItem, attribute: secondAttribute, multiplier: multiplier, constant: constant)
+        constraint.priority = self.priority
+        return constraint
     }
 
     // MARK: relation functions
@@ -271,6 +274,13 @@ public class FluentConstraint {
         } else {
             self.multiplier = multiplier
         }
+        return self
+    }
+
+    // MARK: priority
+
+    public func priority(priority: UILayoutPriority) -> FluentConstraint {
+        self.priority = priority
         return self
     }
 }

@@ -227,4 +227,16 @@ class FluentConstraintsTests: XCTestCase {
         let constraint = FluentConstraint(firstView).width.times(1.25).equalTo.height.build()
         expect(constraint.multiplier).to(beCloseTo(1.0 / 1.25, within: 0.0001))
     }
+
+    // MARK: priority
+
+    func testPriority() {
+        let constraint = FluentConstraint(firstView).width.equalTo(10).priority(750).build()
+        expect(constraint.priority) == 750
+    }
+
+    func testDefaultPriorityIsRequired() {
+        let constraint = FluentConstraint(firstView).width.equalTo(10).build()
+        expect(constraint.priority) == 1000
+    }
 }
