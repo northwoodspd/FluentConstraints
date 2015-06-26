@@ -21,36 +21,8 @@ public class FluentConstraint {
         firstItem = view
     }
 
-    public func add() -> NSLayoutConstraint {
-        let constraint = NSLayoutConstraint(item: firstItem, attribute: firstAttribute, relatedBy: relation, toItem: secondItem, attribute: secondAttribute, multiplier: CGFloat(multiplier), constant: CGFloat(constant))
-
-        if secondItem != nil {
-            var firstItemAncestors = [firstItem]
-            var superview = firstItem.superview
-            while superview != nil {
-                firstItemAncestors.append(superview!)
-                superview = superview?.superview
-            }
-
-            var secondItemAncestors = [secondItem!]
-            superview = secondItem?.superview
-            while superview != nil {
-                secondItemAncestors.append(superview!)
-                superview = superview?.superview
-            }
-
-            // Walk the ancestors of firstItem, looking for a match in the ancestors of secondItem
-            for ancestorView in firstItemAncestors {
-                if contains(secondItemAncestors, ancestorView) {
-                    ancestorView.addConstraint(constraint)
-                    break
-                }
-            }
-        } else {
-            firstItem.addConstraint(constraint)
-        }
-
-        return constraint
+    public func build() -> NSLayoutConstraint {
+        return NSLayoutConstraint(item: firstItem, attribute: firstAttribute, relatedBy: relation, toItem: secondItem, attribute: secondAttribute, multiplier: CGFloat(multiplier), constant: CGFloat(constant))
     }
 
     // MARK: relation functions
