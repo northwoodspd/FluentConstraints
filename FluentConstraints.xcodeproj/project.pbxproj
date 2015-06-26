@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40BDEB461B3DCA16007C4E69 /* FluentConstraintSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BDEB451B3DCA16007C4E69 /* FluentConstraintSet.swift */; };
+		40BDEB481B3DCA31007C4E69 /* FluentConstraintSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BDEB471B3DCA31007C4E69 /* FluentConstraintSetTests.swift */; };
 		40F6161A1A17C2630000825E /* FluentConstraints.h in Headers */ = {isa = PBXBuildFile; fileRef = 40F616191A17C2630000825E /* FluentConstraints.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40F616201A17C2630000825E /* FluentConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F616141A17C2630000825E /* FluentConstraints.framework */; };
 		40F616271A17C2630000825E /* FluentConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F616261A17C2630000825E /* FluentConstraintsTests.swift */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		112DBF46DB108DBFCDCE0730 /* Pods_FluentConstraintsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FluentConstraintsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40BDEB451B3DCA16007C4E69 /* FluentConstraintSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraintSet.swift; sourceTree = "<group>"; };
+		40BDEB471B3DCA31007C4E69 /* FluentConstraintSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraintSetTests.swift; sourceTree = "<group>"; };
 		40F616141A17C2630000825E /* FluentConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FluentConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F616181A17C2630000825E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F616191A17C2630000825E /* FluentConstraints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FluentConstraints.h; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			children = (
 				40F616191A17C2630000825E /* FluentConstraints.h */,
 				40F616301A17C2AD0000825E /* FluentConstraints.swift */,
+				40BDEB451B3DCA16007C4E69 /* FluentConstraintSet.swift */,
 				40F616171A17C2630000825E /* Supporting Files */,
 			);
 			path = FluentConstraints;
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				40F616261A17C2630000825E /* FluentConstraintsTests.swift */,
+				40BDEB471B3DCA31007C4E69 /* FluentConstraintSetTests.swift */,
 				40F616241A17C2630000825E /* Supporting Files */,
 			);
 			path = FluentConstraintsTests;
@@ -289,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F616311A17C2AD0000825E /* FluentConstraints.swift in Sources */,
+				40BDEB461B3DCA16007C4E69 /* FluentConstraintSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F616271A17C2630000825E /* FluentConstraintsTests.swift in Sources */,
+				40BDEB481B3DCA31007C4E69 /* FluentConstraintSetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
