@@ -38,6 +38,17 @@ public class FluentConstraintSet {
         return onView(view)
     }
 
+    // MARK: internal helpers
+
+    func fluentConstraintForView(view: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0, relation: NSLayoutRelation = .Equal) -> FluentConstraint {
+        let constraint = FluentConstraint(view)
+        constraint.firstAttribute = attribute
+        constraint.relation = relation
+        constraint.secondAttribute = attribute
+        constraint.constant = constant
+        return constraint
+    }
+
     // MARK: builds collections of fluent constraints
 
     public var centered: FluentConstraintSet {
@@ -65,11 +76,16 @@ public class FluentConstraintSet {
         return inset(UIEdgeInsets(top: constant, left: constant, bottom: constant, right: constant))
     }
 
-    func fluentConstraintForView(view: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0) -> FluentConstraint {
-        let constraint = FluentConstraint(view)
-        constraint.firstAttribute = attribute
-        constraint.secondAttribute = attribute
-        constraint.constant = constant
-        return constraint
+    public func insetAtLeast(insets: UIEdgeInsets) -> FluentConstraintSet {
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Left, constant: insets.left, relation: .GreaterThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: insets.right, relation: .LessThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Top, constant: insets.top, relation: .GreaterThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: insets.bottom, relation: .LessThanOrEqual))
+
+        return self
+    }
+
+    public func insetAtLeast(constant: CGFloat) -> FluentConstraintSet {
+        return insetAtLeast(UIEdgeInsets(top: constant, left: constant, bottom: constant, right: constant))
     }
 }

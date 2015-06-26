@@ -76,4 +76,23 @@ class FluentConstraintSetTests: XCTestCase {
         expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Top && $0.constant == 10 }) == true
         expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Bottom && $0.constant == 10 }) == true
     }
+
+    func testInsetAtLeast() {
+        let insets = UIEdgeInsets(top: 1, left: 2, bottom: 3, right: 4)
+        let constraints = FluentConstraintSet(firstView).insetAtLeast(insets).onView(secondView).build()
+        expect(constraints.count) == 4
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Left && $0.constant == 2 && $0.relation == NSLayoutRelation.GreaterThanOrEqual }) == true
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Right && $0.constant == 4 && $0.relation == NSLayoutRelation.LessThanOrEqual }) == true
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Top && $0.constant == 1 && $0.relation == NSLayoutRelation.GreaterThanOrEqual }) == true
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Bottom && $0.constant == 3 && $0.relation == NSLayoutRelation.LessThanOrEqual }) == true
+    }
+
+    func testInsetAtLeastWithConstant() {
+        let constraints = FluentConstraintSet(firstView).insetAtLeast(10).onView(secondView).build()
+        expect(constraints.count) == 4
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Left && $0.constant == 10 && $0.relation == NSLayoutRelation.GreaterThanOrEqual }) == true
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Right && $0.constant == 10 && $0.relation == NSLayoutRelation.LessThanOrEqual }) == true
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Top && $0.constant == 10 && $0.relation == NSLayoutRelation.GreaterThanOrEqual }) == true
+        expect(contains(constraints) { $0.firstAttribute == NSLayoutAttribute.Bottom && $0.constant == 10 && $0.relation == NSLayoutRelation.LessThanOrEqual }) == true
+    }
 }
