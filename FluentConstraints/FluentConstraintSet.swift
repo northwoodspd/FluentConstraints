@@ -27,4 +27,8 @@ public class FluentConstraintSet {
         return self
     }
 
+    public var centeredInSuperview: FluentConstraintSet {
+        precondition(firstView.superview != nil, "View does not have a superview")
+        return centeredOn(self.firstView.superview!)
+    }
 }

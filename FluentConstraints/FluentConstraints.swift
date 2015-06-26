@@ -300,11 +300,21 @@ public class FluentConstraint {
         return self
     }
 
+    public var centeredHorizontallyInSuperview: FluentConstraint {
+        precondition(self.firstView.superview != nil, "View does not have a superview")
+        return centeredHorizontallyOn(self.firstView.superview!)
+    }
+
     public func centeredVerticallyOn(secondView: UIView) -> FluentConstraint {
         self.firstAttribute = .CenterY
         self.relation = .Equal
         self.secondView = secondView
         self.secondAttribute = .CenterY
         return self
+    }
+
+    public var centeredVerticallyInSuperview: FluentConstraint {
+        precondition(self.firstView.superview != nil, "View does not have a superview")
+        return centeredVerticallyOn(self.firstView.superview!)
     }
 }
