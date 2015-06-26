@@ -21,6 +21,12 @@ public class FluentConstraintSet {
         return constraints.map { $0.build() }
     }
 
+    public func activate() -> [NSLayoutConstraint] {
+        let constraints = build()
+        NSLayoutConstraint.activateConstraints(constraints)
+        return constraints
+    }
+
     // MARK: relationship to view
 
     public var inSuperview: FluentConstraintSet {

@@ -24,6 +24,22 @@ class FluentConstraintSetTests: XCTestCase {
         secondView = UIView()
     }
 
+    // MARK: activate()
+
+    func testActivate() {
+        let parent = UIView()
+        parent.addSubview(firstView)
+        parent.addSubview(secondView)
+
+        let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).activate()
+        expect(constraints).to(allPass({ $0!.active == true }))
+    }
+
+    func testBuildingAloneDoesNotActivate() {
+        let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).build()
+        expect(constraints).to(allPass({ $0!.active == false }))
+    }
+
     // MARK: relationship to view
 
     func testInSuperview() {
