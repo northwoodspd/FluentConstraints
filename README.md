@@ -77,6 +77,8 @@ If you'd like to contribute, please:
 * Please add tests for new functionality or less-than-trivial bug fixes
 * Send a pull request
 
+The tests are written with XCTest, but using the [Nimble](https://github.com/Quick/Nimble) matcher framework. You'll need to run `pod install` in your fork before running the tests.
+
 ## License
 
 FluentConstraints is provided under the MIT license.
