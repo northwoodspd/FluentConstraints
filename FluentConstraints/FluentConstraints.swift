@@ -283,6 +283,26 @@ public class FluentConstraint {
         return self
     }
 
+    // MARK: constant
+
+    public func plus(constant: CGFloat) -> FluentConstraint {
+        if secondView == nil {
+            self.constant = -constant
+        } else {
+            self.constant = constant
+        }
+        return self
+    }
+
+    public func minus(constant: CGFloat) -> FluentConstraint {
+        if secondView == nil {
+            self.constant = constant
+        } else {
+            self.constant = -constant
+        }
+        return self
+    }
+
     // MARK: priority
 
     public func priority(priority: UILayoutPriority) -> FluentConstraint {

@@ -228,6 +228,28 @@ class FluentConstraintsTests: XCTestCase {
         expect(constraint.multiplier).to(beCloseTo(1.0 / 1.25, within: 0.0001))
     }
 
+    // MARK: constant
+
+    func testPlus() {
+        let constraint = FluentConstraint(firstView).width.equalTo(secondView).width.plus(10).build()
+        expect(constraint.constant) == 10
+    }
+
+    func testPlusFlipsSignWhenSpecifiedBeforeRelation() {
+        let constraint = FluentConstraint(firstView).width.plus(10).equalTo(secondView).width.build()
+        expect(constraint.constant) == -10
+    }
+
+    func testMinus() {
+        let constraint = FluentConstraint(firstView).width.equalTo(secondView).width.minus(10).build()
+        expect(constraint.constant) == -10
+    }
+
+    func testMinusFlipsSignWhenSpecifiedBeforeRelation() {
+        let constraint = FluentConstraint(firstView).width.minus(10).equalTo(secondView).width.build()
+        expect(constraint.constant) == 10
+    }
+
     // MARK: priority
 
     func testPriority() {
