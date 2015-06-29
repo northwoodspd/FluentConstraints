@@ -71,9 +71,9 @@ public class FluentConstraintSet {
 
     public func inset(insets: UIEdgeInsets) -> FluentConstraintSet {
         constraints.append(fluentConstraintForView(self.firstView, attribute: .Left, constant: insets.left))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: insets.right))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: -insets.right))
         constraints.append(fluentConstraintForView(self.firstView, attribute: .Top, constant: insets.top))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: insets.bottom))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: -insets.bottom))
 
         return self
     }
@@ -84,9 +84,9 @@ public class FluentConstraintSet {
 
     public func insetAtLeast(insets: UIEdgeInsets) -> FluentConstraintSet {
         constraints.append(fluentConstraintForView(self.firstView, attribute: .Left, constant: insets.left, relation: .GreaterThanOrEqual))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: insets.right, relation: .LessThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: -insets.right, relation: .LessThanOrEqual))
         constraints.append(fluentConstraintForView(self.firstView, attribute: .Top, constant: insets.top, relation: .GreaterThanOrEqual))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: insets.bottom, relation: .LessThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: -insets.bottom, relation: .LessThanOrEqual))
 
         return self
     }
