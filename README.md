@@ -17,16 +17,16 @@ Can be written as:
 Here is a more complex example. This insets a view 20 points from the edges of its superview:
 
     let leftConstraint = NSLayoutConstraint(item: subView, attribute: .Leading,
-        relatedBy: .GreaterThanOrEqual, toItem: subView.superview, attribute: .Leading,
+        relatedBy: .Equal, toItem: subView.superview, attribute: .Leading,
         multiplier: 1.0, constant: 20)
     let rightConstraint = NSLayoutConstraint(item: subView, attribute: .Trailing,
-        relatedBy: .LessThanOrEqual, toItem: subView.superview, attribute: .Trailing,
+        relatedBy: .Equal, toItem: subView.superview, attribute: .Trailing,
         multiplier: 1.0, constant: -20)
     let topConstraint = NSLayoutConstraint(item: subView, attribute: .Top,
-        relatedBy: .GreaterThanOrEqual, toItem: subView.superview, attribute: .Top,
+        relatedBy: .Equal, toItem: subView.superview, attribute: .Top,
         multiplier: 1.0, constant: 20)
     let bottomConstraint = NSLayoutConstraint(item: subView, attribute: .Bottom,
-        relatedBy: .LessThanOrEqual, toItem: subView.superview, attribute: .Bottom,
+        relatedBy: .Equal, toItem: subView.superview, attribute: .Bottom,
         multiplier: 1.0, constant: -20)
     NSLayoutConstraint.activateConstraints([leftConstraint, rightConstraint, topConstraint,
         bottomConstraint])
@@ -37,7 +37,7 @@ It can be written using a `FluentConstraintSet` as:
 
 ## ObjC?
 
-The framework doesn't include any Swift-specific features, so it should work. It simply won't provide as much of a syntax benefit.
+Most of the framework will bridge back to Objective-C, except the relation properties/functions, which essentially makes it unusable from Objective-C. Sorry.
 
 ## Installation
 
