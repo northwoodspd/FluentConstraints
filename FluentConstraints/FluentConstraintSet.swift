@@ -31,12 +31,12 @@ public class FluentConstraintSet {
 
     public var inSuperview: FluentConstraintSet {
         precondition(self.firstView.superview != nil, "View does not have a superview")
-        self.constraints.map { $0.secondView = self.firstView.superview! }
+        self.constraints.forEach { $0.secondView = self.firstView.superview! }
         return self
     }
 
     public func onView(view: UIView) -> FluentConstraintSet {
-        self.constraints.map { $0.secondView = view }
+        self.constraints.forEach { $0.secondView = view }
         return self
     }
 
