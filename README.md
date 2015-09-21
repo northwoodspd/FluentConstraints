@@ -41,7 +41,7 @@ Most of the framework will bridge back to Objective-C, except the relation prope
 
 ## Installation
 
-FluentConstraints requires iOS 8. There is not currently a Mac OS X target, although nothing in the code is specific to iOS.
+FluentConstraints requires iOS 8 or later. There is not currently a Mac OS X target, although nothing in the code is specific to iOS.
 
 ### Install via CocoaPods
 
@@ -53,7 +53,8 @@ CocoaPods 0.36.0 or later is required to use Swift frameworks. You need to add `
 
     target 'YOUR APP TARGET HERE', :exclusive => true do
         ...
-        pod 'FluentConstraints'
+        pod 'FluentConstraints'          # for Xcode 7 / Swift 2.0
+        pod 'FluentConstraints', '<1.0'  # for Xcode 6 / Swift 1.2
     end
 
     target 'YOUR TEST TARGET HERE', :exclusive => true do

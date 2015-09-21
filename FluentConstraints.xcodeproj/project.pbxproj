@@ -30,6 +30,7 @@
 		112DBF46DB108DBFCDCE0730 /* Pods_FluentConstraintsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FluentConstraintsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40504EFD1B41A173002D0026 /* FluentConstraints.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FluentConstraints.podspec; sourceTree = SOURCE_ROOT; };
 		40504EFE1B41A173002D0026 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		40AA0AD71BB09CC0009D2BBD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		40BDEB451B3DCA16007C4E69 /* FluentConstraintSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraintSet.swift; sourceTree = "<group>"; };
 		40BDEB471B3DCA31007C4E69 /* FluentConstraintSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraintSetTests.swift; sourceTree = "<group>"; };
 		40F616141A17C2630000825E /* FluentConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FluentConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +104,7 @@
 		40F616161A17C2630000825E /* FluentConstraints */ = {
 			isa = PBXGroup;
 			children = (
+				40AA0AD71BB09CC0009D2BBD /* README.md */,
 				40F616191A17C2630000825E /* FluentConstraints.h */,
 				40F616301A17C2AD0000825E /* FluentConstraints.swift */,
 				40BDEB451B3DCA16007C4E69 /* FluentConstraintSet.swift */,
