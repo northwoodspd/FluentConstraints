@@ -13,7 +13,7 @@
 		40F616201A17C2630000825E /* FluentConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F616141A17C2630000825E /* FluentConstraints.framework */; };
 		40F616271A17C2630000825E /* FluentConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F616261A17C2630000825E /* FluentConstraintsTests.swift */; };
 		40F616311A17C2AD0000825E /* FluentConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F616301A17C2AD0000825E /* FluentConstraints.swift */; };
-		F0A17096E3D1414810568689 /* Pods_FluentConstraintsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112DBF46DB108DBFCDCE0730 /* Pods_FluentConstraintsTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F0A17096E3D1414810568689 /* Pods_FluentConstraintsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112DBF46DB108DBFCDCE0730 /* Pods_FluentConstraintsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

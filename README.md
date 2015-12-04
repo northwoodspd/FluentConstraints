@@ -1,4 +1,4 @@
-# FluentConstraints
+# FluentConstraints [![Build Status](https://travis-ci.org/northwoodspd/FluentConstraints.svg)](https://travis-ci.org/northwoodspd/FluentConstraints)
 
 FluentConstraints is a Swift framework intended to make working with Auto Layout constraints in Swift code much easier. While Xcode has excellent support for Auto Layout in Interface Builder, sometimes you can't avoid building UI in code. This wasn't so bad with springs and struts, but Auto Layout requires a minimum of two constraints to position a view, and often more. The visual language helps a little, but it's very limited. `NSLayoutConstraint(item:attribute:relatedBy:toItem:attribute:multiplier:constant:)` provides the most flexibility, but a few of those initializers in a row becomes difficult to read.
 

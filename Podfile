@@ -7,5 +7,5 @@ target 'FluentConstraints' do
 end
 
 target 'FluentConstraintsTests' do
-    pod "Nimble", git: "https://github.com/Quick/Nimble", branch: "swift-2.0"
+    pod "Nimble"
 end
