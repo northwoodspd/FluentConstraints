@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode7.1
+osx_image: xcode8
 env:
   global:
-    - WORKSPACE="FluentConstraints.xcworkspace"
+    - PROJECT="FluentConstraints.xcodeproj"
     - SCHEME="FluentConstraints"
     - SDK="iphonesimulator9.1"
   matrix:
@@ -11,4 +11,4 @@ env:
     - DESTINATION="OS=8.4,name=iPhone 5"
     - DESTINATION="OS=8.4,name=iPhone 5s"
 script:
-  - xctool -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" test
+  - xctool -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" test
