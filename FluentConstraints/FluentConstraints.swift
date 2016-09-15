@@ -182,7 +182,7 @@ open class FluentConstraint {
         return self
     }
 
-    open var baseline: FluentConstraint {
+    open var lastBaseline: FluentConstraint {
         if secondView == nil {
             self.firstAttribute = .lastBaseline
         } else {

@@ -90,8 +90,8 @@ class FluentConstraintsTests: XCTestCase {
         XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerY)
     }
 
-    func testBaselineAttribute() {
-        let constraint = FluentConstraint(firstView).baseline.equalTo(secondView).baseline.build()
+    func testLastBaselineAttribute() {
+        let constraint = FluentConstraint(firstView).lastBaseline.equalTo(secondView).lastBaseline.build()
         XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.lastBaseline)
         XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.lastBaseline)
     }
