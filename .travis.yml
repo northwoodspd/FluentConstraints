@@ -4,7 +4,7 @@ env:
   global:
     - PROJECT="FluentConstraints.xcodeproj"
     - SCHEME="FluentConstraints"
-    - SDK="iphonesimulator9.1"
+    - SDK="iphonesimulator10.0"
   matrix:
     - DESTINATION="OS=9.1,name=iPhone 5"
     - DESTINATION="OS=9.1,name=iPhone 5s"
