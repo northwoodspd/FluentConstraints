@@ -1,6 +1,8 @@
 language: objective-c
 osx_image: xcode8
 env:
+  before_install:
+    - gem install xcpretty
   global:
     - PROJECT="FluentConstraints.xcodeproj"
     - SCHEME="FluentConstraints"
@@ -11,4 +13,5 @@ env:
     - DESTINATION="OS=8.4,name=iPhone 5"
     - DESTINATION="OS=8.4,name=iPhone 5s"
 script:
-  - xctool -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" test
+  - set -o pipefail
+  - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" test | xcpretty -c
