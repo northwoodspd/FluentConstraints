@@ -8,12 +8,12 @@
 
 import UIKit
 
-public class FluentConstraint {
+open class FluentConstraint {
     var firstView: UIView
-    var firstAttribute = NSLayoutAttribute.NotAnAttribute
-    var relation = NSLayoutRelation.Equal
+    var firstAttribute = NSLayoutAttribute.notAnAttribute
+    var relation = NSLayoutRelation.equal
     var secondView: UIView?
-    var secondAttribute = NSLayoutAttribute.NotAnAttribute
+    var secondAttribute = NSLayoutAttribute.notAnAttribute
     var multiplier: CGFloat = 1.0
     var constant: CGFloat = 0.0
     var priority: UILayoutPriority = 1000.0
@@ -22,259 +22,259 @@ public class FluentConstraint {
         self.firstView = view
     }
 
-    public func build() -> NSLayoutConstraint {
+    open func build() -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: firstView, attribute: firstAttribute, relatedBy: relation, toItem: secondView, attribute: secondAttribute, multiplier: multiplier, constant: constant)
         constraint.priority = self.priority
         return constraint
     }
 
-    public func activate() -> NSLayoutConstraint {
+    open func activate() -> NSLayoutConstraint {
         let constraint = build()
-        constraint.active = true
+        constraint.isActive = true
         return constraint
     }
 
     // MARK: relation functions
 
-    public func equalTo(view: UIView) -> FluentConstraint {
-        self.relation = .Equal
+    open func equalTo(_ view: UIView) -> FluentConstraint {
+        self.relation = .equal
         self.secondView = view
         return self
     }
 
-    public func equalTo(constant: CGFloat) -> FluentConstraint {
-        self.relation = .Equal
+    open func equalTo(_ constant: CGFloat) -> FluentConstraint {
+        self.relation = .equal
         self.constant = constant
         return self
     }
 
-    public var equalTo: FluentConstraint {
-        self.relation = .Equal
+    open var equalTo: FluentConstraint {
+        self.relation = .equal
         self.secondView = self.firstView
         return self
     }
 
-    public func greaterThanOrEqualTo(view: UIView) -> FluentConstraint {
-        self.relation = .GreaterThanOrEqual
+    open func greaterThanOrEqualTo(_ view: UIView) -> FluentConstraint {
+        self.relation = .greaterThanOrEqual
         self.secondView = view
         return self
     }
 
-    public func greaterThanOrEqualTo(constant: CGFloat) -> FluentConstraint {
-        self.relation = .GreaterThanOrEqual
+    open func greaterThanOrEqualTo(_ constant: CGFloat) -> FluentConstraint {
+        self.relation = .greaterThanOrEqual
         self.constant = constant
         return self
     }
 
-    public var greaterThanOrEqualTo: FluentConstraint {
-        self.relation = .GreaterThanOrEqual
+    open var greaterThanOrEqualTo: FluentConstraint {
+        self.relation = .greaterThanOrEqual
         self.secondView = self.firstView
         return self
     }
 
-    public func lessThanOrEqualTo(view: UIView) -> FluentConstraint {
-        self.relation = .LessThanOrEqual
+    open func lessThanOrEqualTo(_ view: UIView) -> FluentConstraint {
+        self.relation = .lessThanOrEqual
         self.secondView = view
         return self
     }
 
-    public func lessThanOrEqualTo(constant: CGFloat) -> FluentConstraint {
-        self.relation = .LessThanOrEqual
+    open func lessThanOrEqualTo(_ constant: CGFloat) -> FluentConstraint {
+        self.relation = .lessThanOrEqual
         self.constant = constant
         return self
     }
 
-    public var lessThanOrEqualTo: FluentConstraint {
-        self.relation = .LessThanOrEqual
+    open var lessThanOrEqualTo: FluentConstraint {
+        self.relation = .lessThanOrEqual
         self.secondView = self.firstView
         return self
     }
 
     // MARK: attribute functions
 
-    public var left: FluentConstraint {
+    open var left: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Left
+            self.firstAttribute = .left
         } else {
-            self.secondAttribute = .Left
+            self.secondAttribute = .left
         }
         return self
     }
 
-    public var right: FluentConstraint {
+    open var right: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Right
+            self.firstAttribute = .right
         } else {
-            self.secondAttribute = .Right
+            self.secondAttribute = .right
         }
         return self
     }
 
-    public var top: FluentConstraint {
+    open var top: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Top
+            self.firstAttribute = .top
         } else {
-            self.secondAttribute = .Top
+            self.secondAttribute = .top
         }
         return self
     }
 
-    public var bottom: FluentConstraint {
+    open var bottom: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Bottom
+            self.firstAttribute = .bottom
         } else {
-            self.secondAttribute = .Bottom
+            self.secondAttribute = .bottom
         }
         return self
     }
 
-    public var leading: FluentConstraint {
+    open var leading: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Leading
+            self.firstAttribute = .leading
         } else {
-            self.secondAttribute = .Leading
+            self.secondAttribute = .leading
         }
         return self
     }
 
-    public var trailing: FluentConstraint {
+    open var trailing: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Trailing
+            self.firstAttribute = .trailing
         } else {
-            self.secondAttribute = .Trailing
+            self.secondAttribute = .trailing
         }
         return self
     }
 
-    public var width: FluentConstraint {
+    open var width: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Width
+            self.firstAttribute = .width
         } else {
-            self.secondAttribute = .Width
+            self.secondAttribute = .width
         }
         return self
     }
 
-    public var height: FluentConstraint {
+    open var height: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Height
+            self.firstAttribute = .height
         } else {
-            self.secondAttribute = .Height
+            self.secondAttribute = .height
         }
         return self
     }
 
-    public var centerX: FluentConstraint {
+    open var centerX: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .CenterX
+            self.firstAttribute = .centerX
         } else {
-            self.secondAttribute = .CenterX
+            self.secondAttribute = .centerX
         }
         return self
     }
 
-    public var centerY: FluentConstraint {
+    open var centerY: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .CenterY
+            self.firstAttribute = .centerY
         } else {
-            self.secondAttribute = .CenterY
+            self.secondAttribute = .centerY
         }
         return self
     }
 
-    public var baseline: FluentConstraint {
+    open var lastBaseline: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .Baseline
+            self.firstAttribute = .lastBaseline
         } else {
-            self.secondAttribute = .Baseline
+            self.secondAttribute = .lastBaseline
         }
         return self
     }
 
-    public var firstBaseline: FluentConstraint {
+    open var firstBaseline: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .FirstBaseline
+            self.firstAttribute = .firstBaseline
         } else {
-            self.secondAttribute = .FirstBaseline
+            self.secondAttribute = .firstBaseline
         }
         return self
     }
 
-    public var leftMargin: FluentConstraint {
+    open var leftMargin: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .LeftMargin
+            self.firstAttribute = .leftMargin
         } else {
-            self.secondAttribute = .LeftMargin
+            self.secondAttribute = .leftMargin
         }
         return self
     }
 
-    public var rightMargin: FluentConstraint {
+    open var rightMargin: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .RightMargin
+            self.firstAttribute = .rightMargin
         } else {
-            self.secondAttribute = .RightMargin
+            self.secondAttribute = .rightMargin
         }
         return self
     }
 
-    public var topMargin: FluentConstraint {
+    open var topMargin: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .TopMargin
+            self.firstAttribute = .topMargin
         } else {
-            self.secondAttribute = .TopMargin
+            self.secondAttribute = .topMargin
         }
         return self
     }
 
-    public var bottomMargin: FluentConstraint {
+    open var bottomMargin: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .BottomMargin
+            self.firstAttribute = .bottomMargin
         } else {
-            self.secondAttribute = .BottomMargin
+            self.secondAttribute = .bottomMargin
         }
         return self
     }
 
-    public var leadingMargin: FluentConstraint {
+    open var leadingMargin: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .LeadingMargin
+            self.firstAttribute = .leadingMargin
         } else {
-            self.secondAttribute = .LeadingMargin
+            self.secondAttribute = .leadingMargin
         }
         return self
     }
 
-    public var trailingMargin: FluentConstraint {
+    open var trailingMargin: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .TrailingMargin
+            self.firstAttribute = .trailingMargin
         } else {
-            self.secondAttribute = .TrailingMargin
+            self.secondAttribute = .trailingMargin
         }
         return self
     }
 
-    public var centerXWithinMargins: FluentConstraint {
+    open var centerXWithinMargins: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .CenterXWithinMargins
+            self.firstAttribute = .centerXWithinMargins
         } else {
-            self.secondAttribute = .CenterXWithinMargins
+            self.secondAttribute = .centerXWithinMargins
         }
         return self
     }
 
-    public var centerYWithinMargins: FluentConstraint {
+    open var centerYWithinMargins: FluentConstraint {
         if secondView == nil {
-            self.firstAttribute = .CenterYWithinMargins
+            self.firstAttribute = .centerYWithinMargins
         } else {
-            self.secondAttribute = .CenterYWithinMargins
+            self.secondAttribute = .centerYWithinMargins
         }
         return self
     }
 
     // MARK: multiplier
 
-    public func times(multiplier: CGFloat) -> FluentConstraint {
+    open func times(_ multiplier: CGFloat) -> FluentConstraint {
         if secondView == nil {
             self.multiplier = 1.0 / multiplier
         } else {
@@ -285,7 +285,7 @@ public class FluentConstraint {
 
     // MARK: constant
 
-    public func plus(constant: CGFloat) -> FluentConstraint {
+    open func plus(_ constant: CGFloat) -> FluentConstraint {
         if secondView == nil {
             self.constant = -constant
         } else {
@@ -294,7 +294,7 @@ public class FluentConstraint {
         return self
     }
 
-    public func minus(constant: CGFloat) -> FluentConstraint {
+    open func minus(_ constant: CGFloat) -> FluentConstraint {
         if secondView == nil {
             self.constant = constant
         } else {
@@ -305,35 +305,35 @@ public class FluentConstraint {
 
     // MARK: priority
 
-    public func priority(priority: UILayoutPriority) -> FluentConstraint {
+    open func priority(_ priority: UILayoutPriority) -> FluentConstraint {
         self.priority = priority
         return self
     }
 
     // MARK: convenience functions
 
-    public func centeredHorizontallyOn(secondView: UIView) -> FluentConstraint {
-        self.firstAttribute = .CenterX
-        self.relation = .Equal
+    open func centeredHorizontallyOn(_ secondView: UIView) -> FluentConstraint {
+        self.firstAttribute = .centerX
+        self.relation = .equal
         self.secondView = secondView
-        self.secondAttribute = .CenterX
+        self.secondAttribute = .centerX
         return self
     }
 
-    public var centeredHorizontallyInSuperview: FluentConstraint {
+    open var centeredHorizontallyInSuperview: FluentConstraint {
         precondition(self.firstView.superview != nil, "View does not have a superview")
         return centeredHorizontallyOn(self.firstView.superview!)
     }
 
-    public func centeredVerticallyOn(secondView: UIView) -> FluentConstraint {
-        self.firstAttribute = .CenterY
-        self.relation = .Equal
+    open func centeredVerticallyOn(_ secondView: UIView) -> FluentConstraint {
+        self.firstAttribute = .centerY
+        self.relation = .equal
         self.secondView = secondView
-        self.secondAttribute = .CenterY
+        self.secondAttribute = .centerY
         return self
     }
 
-    public var centeredVerticallyInSuperview: FluentConstraint {
+    open var centeredVerticallyInSuperview: FluentConstraint {
         precondition(self.firstView.superview != nil, "View does not have a superview")
         return centeredVerticallyOn(self.firstView.superview!)
     }

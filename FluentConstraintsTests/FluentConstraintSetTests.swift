@@ -8,7 +8,6 @@
 
 import UIKit
 import XCTest
-import Nimble
 
 import FluentConstraints
 
@@ -32,12 +31,12 @@ class FluentConstraintSetTests: XCTestCase {
         parent.addSubview(secondView)
 
         let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).activate()
-        expect(constraints).to(allPass({ $0!.active == true }))
+        constraints.forEach({ XCTAssert($0.isActive) })
     }
 
     func testBuildingAloneDoesNotActivate() {
         let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).build()
-        expect(constraints).to(allPass({ $0!.active == false }))
+        constraints.forEach({ XCTAssert($0.isActive == false) })
     }
 
     // MARK: relationship to view
@@ -45,52 +44,52 @@ class FluentConstraintSetTests: XCTestCase {
     func testInSuperview() {
         secondView.addSubview(firstView)
         let constraints = FluentConstraintSet(firstView).centered.inSuperview.build()
-        expect(constraints).to(allPass({ ($0!.secondItem as? UIView) == self.secondView }))
+        constraints.forEach({ XCTAssertEqual($0.secondItem as? UIView, self.secondView) })
     }
 
     func testOnView() {
         let constraints = FluentConstraintSet(firstView).centered.onView(secondView).build()
-        expect(constraints).to(allPass({ ($0!.secondItem as? UIView) == self.secondView }))
+        constraints.forEach({ XCTAssertEqual($0.secondItem as? UIView, self.secondView) })
     }
 
     func testAsView() {
         let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).build()
-        expect(constraints).to(allPass({ ($0!.secondItem as? UIView) == self.secondView }))
+        constraints.forEach({ XCTAssertEqual($0.secondItem as? UIView, self.secondView) })
     }
 
     // MARK: build collections of constraints
 
     func testCentered() {
         let constraints = FluentConstraintSet(firstView).centered.onView(secondView).build()
-        expect(constraints.count) == 2
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.CenterX }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.CenterY }) == true
+        XCTAssertEqual(constraints.count, 2);
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.centerX })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.centerY })
     }
 
     func testSameSize() {
         let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).build()
-        expect(constraints.count) == 2
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Width }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Height }) == true
+        XCTAssertEqual(constraints.count, 2);
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.width })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.height })
     }
 
     func testInset() {
         let insets = UIEdgeInsets(top: 1, left: 2, bottom: 3, right: 4)
         let constraints = FluentConstraintSet(firstView).inset(insets).onView(secondView).build()
-        expect(constraints.count) == 4
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Left && $0.constant == 2 }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Right && $0.constant == -4 }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Top && $0.constant == 1 }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Bottom && $0.constant == -3 }) == true
+        XCTAssertEqual(constraints.count, 4);
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.left && $0.constant == 2 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.right && $0.constant == -4 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.top && $0.constant == 1 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.bottom && $0.constant == -3 })
     }
 
     func testInsetWithConstant() {
         let constraints = FluentConstraintSet(firstView).inset(10).onView(secondView).build()
-        expect(constraints.count) == 4
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Left && $0.constant == 10 }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Right && $0.constant == -10 }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Top && $0.constant == 10 }) == true
-        expect(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.Bottom && $0.constant == -10 }) == true
+        XCTAssertEqual(constraints.count, 4);
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.left && $0.constant == 10 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.right && $0.constant == -10 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.top && $0.constant == 10 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.bottom && $0.constant == -10 })
     }
 
     func find(constraints: [NSLayoutConstraint], firstAttribute: NSLayoutAttribute, constant: CGFloat, relation: NSLayoutRelation) -> NSLayoutConstraint? {
@@ -106,19 +105,19 @@ class FluentConstraintSetTests: XCTestCase {
     func testInsetAtLeast() {
         let insets = UIEdgeInsets(top: 1, left: 2, bottom: 3, right: 4)
         let constraints = FluentConstraintSet(firstView).insetAtLeast(insets).onView(secondView).build()
-        expect(constraints.count) == 4
-        expect(self.find(constraints, firstAttribute: .Left, constant: 2, relation: .GreaterThanOrEqual)).toNot(beNil())
-        expect(self.find(constraints, firstAttribute: .Right, constant: -4, relation: .LessThanOrEqual)).toNot(beNil())
-        expect(self.find(constraints, firstAttribute: .Top, constant: 1, relation: .GreaterThanOrEqual)).toNot(beNil())
-        expect(self.find(constraints, firstAttribute: .Bottom, constant: -3, relation: .LessThanOrEqual)).toNot(beNil())
+        XCTAssertEqual(constraints.count, 4);
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .left, constant: 2, relation: .greaterThanOrEqual))
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .right, constant: -4, relation: .lessThanOrEqual))
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .top, constant: 1, relation: .greaterThanOrEqual))
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .bottom, constant: -3, relation: .lessThanOrEqual))
     }
 
     func testInsetAtLeastWithConstant() {
         let constraints = FluentConstraintSet(firstView).insetAtLeast(10).onView(secondView).build()
-        expect(constraints.count) == 4
-        expect(self.find(constraints, firstAttribute: .Left, constant: 10, relation: .GreaterThanOrEqual)).toNot(beNil())
-        expect(self.find(constraints, firstAttribute: .Right, constant: -10, relation: .LessThanOrEqual)).toNot(beNil())
-        expect(self.find(constraints, firstAttribute: .Top, constant: 10, relation: .GreaterThanOrEqual)).toNot(beNil())
-        expect(self.find(constraints, firstAttribute: .Bottom, constant: -10, relation: .LessThanOrEqual)).toNot(beNil())
+        XCTAssertEqual(constraints.count, 4);
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .left, constant: 10, relation: .greaterThanOrEqual))
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .right, constant: -10, relation: .lessThanOrEqual))
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .top, constant: 10, relation: .greaterThanOrEqual))
+        XCTAssertNotNil(self.find(constraints: constraints, firstAttribute: .bottom, constant: -10, relation: .lessThanOrEqual))
     }
 }

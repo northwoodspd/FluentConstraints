@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class FluentConstraintSet {
+open class FluentConstraintSet {
 
     var firstView: UIView
     var constraints: [FluentConstraint] = []
@@ -17,36 +17,36 @@ public class FluentConstraintSet {
         self.firstView = view
     }
 
-    public func build() -> [NSLayoutConstraint] {
+    open func build() -> [NSLayoutConstraint] {
         return constraints.map { $0.build() }
     }
 
-    public func activate() -> [NSLayoutConstraint] {
+    open func activate() -> [NSLayoutConstraint] {
         let constraints = build()
-        NSLayoutConstraint.activateConstraints(constraints)
+        NSLayoutConstraint.activate(constraints)
         return constraints
     }
 
     // MARK: relationship to view
 
-    public var inSuperview: FluentConstraintSet {
+    open var inSuperview: FluentConstraintSet {
         precondition(self.firstView.superview != nil, "View does not have a superview")
         self.constraints.forEach { $0.secondView = self.firstView.superview! }
         return self
     }
 
-    public func onView(view: UIView) -> FluentConstraintSet {
+    open func onView(_ view: UIView) -> FluentConstraintSet {
         self.constraints.forEach { $0.secondView = view }
         return self
     }
 
-    public func asView(view: UIView) -> FluentConstraintSet {
+    open func asView(_ view: UIView) -> FluentConstraintSet {
         return onView(view)
     }
 
     // MARK: internal helpers
 
-    func fluentConstraintForView(view: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0, relation: NSLayoutRelation = .Equal) -> FluentConstraint {
+    func fluentConstraintForView(_ view: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0, relation: NSLayoutRelation = .equal) -> FluentConstraint {
         let constraint = FluentConstraint(view)
         constraint.firstAttribute = attribute
         constraint.relation = relation
@@ -57,41 +57,41 @@ public class FluentConstraintSet {
 
     // MARK: builds collections of fluent constraints
 
-    public var centered: FluentConstraintSet {
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .CenterX))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .CenterY))
+    open var centered: FluentConstraintSet {
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .centerX))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .centerY))
         return self
     }
 
-    public var sameSize: FluentConstraintSet {
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Width))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Height))
+    open var sameSize: FluentConstraintSet {
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .width))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .height))
         return self
     }
 
-    public func inset(insets: UIEdgeInsets) -> FluentConstraintSet {
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Left, constant: insets.left))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: -insets.right))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Top, constant: insets.top))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: -insets.bottom))
+    open func inset(_ insets: UIEdgeInsets) -> FluentConstraintSet {
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .left, constant: insets.left))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .right, constant: -insets.right))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .top, constant: insets.top))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .bottom, constant: -insets.bottom))
 
         return self
     }
 
-    public func inset(constant: CGFloat) -> FluentConstraintSet {
+    open func inset(_ constant: CGFloat) -> FluentConstraintSet {
         return inset(UIEdgeInsets(top: constant, left: constant, bottom: constant, right: constant))
     }
 
-    public func insetAtLeast(insets: UIEdgeInsets) -> FluentConstraintSet {
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Left, constant: insets.left, relation: .GreaterThanOrEqual))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Right, constant: -insets.right, relation: .LessThanOrEqual))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Top, constant: insets.top, relation: .GreaterThanOrEqual))
-        constraints.append(fluentConstraintForView(self.firstView, attribute: .Bottom, constant: -insets.bottom, relation: .LessThanOrEqual))
+    open func insetAtLeast(_ insets: UIEdgeInsets) -> FluentConstraintSet {
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .left, constant: insets.left, relation: .greaterThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .right, constant: -insets.right, relation: .lessThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .top, constant: insets.top, relation: .greaterThanOrEqual))
+        constraints.append(fluentConstraintForView(self.firstView, attribute: .bottom, constant: -insets.bottom, relation: .lessThanOrEqual))
 
         return self
     }
 
-    public func insetAtLeast(constant: CGFloat) -> FluentConstraintSet {
+    open func insetAtLeast(_ constant: CGFloat) -> FluentConstraintSet {
         return insetAtLeast(UIEdgeInsets(top: constant, left: constant, bottom: constant, right: constant))
     }
 }

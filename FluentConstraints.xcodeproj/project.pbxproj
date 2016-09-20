@@ -13,7 +13,6 @@
 		40F616201A17C2630000825E /* FluentConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F616141A17C2630000825E /* FluentConstraints.framework */; };
 		40F616271A17C2630000825E /* FluentConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F616261A17C2630000825E /* FluentConstraintsTests.swift */; };
 		40F616311A17C2AD0000825E /* FluentConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F616301A17C2AD0000825E /* FluentConstraints.swift */; };
-		F0A17096E3D1414810568689 /* Pods_FluentConstraintsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112DBF46DB108DBFCDCE0730 /* Pods_FluentConstraintsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		112DBF46DB108DBFCDCE0730 /* Pods_FluentConstraintsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FluentConstraintsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40504EFD1B41A173002D0026 /* FluentConstraints.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FluentConstraints.podspec; sourceTree = SOURCE_ROOT; };
-		40504EFE1B41A173002D0026 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		40AA0AD71BB09CC0009D2BBD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		40BDEB451B3DCA16007C4E69 /* FluentConstraintSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraintSet.swift; sourceTree = "<group>"; };
 		40BDEB471B3DCA31007C4E69 /* FluentConstraintSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraintSetTests.swift; sourceTree = "<group>"; };
@@ -40,8 +36,6 @@
 		40F616251A17C2630000825E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F616261A17C2630000825E /* FluentConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentConstraintsTests.swift; sourceTree = "<group>"; };
 		40F616301A17C2AD0000825E /* FluentConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluentConstraints.swift; sourceTree = "<group>"; };
-		5D34A33ECA3C6585B2EC4044 /* Pods-FluentConstraintsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluentConstraintsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FluentConstraintsTests/Pods-FluentConstraintsTests.release.xcconfig"; sourceTree = "<group>"; };
-		D4D2CFE4FF8AE5BD8A23C408 /* Pods-FluentConstraintsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluentConstraintsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FluentConstraintsTests/Pods-FluentConstraintsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,38 +51,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F616201A17C2630000825E /* FluentConstraints.framework in Frameworks */,
-				F0A17096E3D1414810568689 /* Pods_FluentConstraintsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F2CA2771468F106AEF4A8E0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D4D2CFE4FF8AE5BD8A23C408 /* Pods-FluentConstraintsTests.debug.xcconfig */,
-				5D34A33ECA3C6585B2EC4044 /* Pods-FluentConstraintsTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2B16CC559B4808BC7B88B4FF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				112DBF46DB108DBFCDCE0730 /* Pods_FluentConstraintsTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		40F6160A1A17C2630000825E = {
 			isa = PBXGroup;
 			children = (
 				40F616161A17C2630000825E /* FluentConstraints */,
 				40F616231A17C2630000825E /* FluentConstraintsTests */,
 				40F616151A17C2630000825E /* Products */,
-				0F2CA2771468F106AEF4A8E0 /* Pods */,
-				2B16CC559B4808BC7B88B4FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,8 +90,6 @@
 		40F616171A17C2630000825E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				40504EFD1B41A173002D0026 /* FluentConstraints.podspec */,
-				40504EFE1B41A173002D0026 /* Podfile */,
 				40F616181A17C2630000825E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -177,12 +149,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40F6162D1A17C2630000825E /* Build configuration list for PBXNativeTarget "FluentConstraintsTests" */;
 			buildPhases = (
-				E54B458E5340984D9A4C2593 /* Check Pods Manifest.lock */,
 				40F6161B1A17C2630000825E /* Sources */,
 				40F6161C1A17C2630000825E /* Frameworks */,
 				40F6161D1A17C2630000825E /* Resources */,
-				62BCE0E387D4C71C568DEE3C /* Embed Pods Frameworks */,
-				2C507B47BC36790C18E316F6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,9 +176,11 @@
 					40F616131A17C2630000825E = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 47FW5282Z6;
+						LastSwiftMigration = 0800;
 					};
 					40F6161E1A17C2630000825E = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -247,54 +218,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2C507B47BC36790C18E316F6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FluentConstraintsTests/Pods-FluentConstraintsTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		62BCE0E387D4C71C568DEE3C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FluentConstraintsTests/Pods-FluentConstraintsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E54B458E5340984D9A4C2593 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40F6160F1A17C2630000825E /* Sources */ = {
@@ -427,6 +350,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -444,12 +368,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.teamnorthwoods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		40F6162E1A17C2630000825E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4D2CFE4FF8AE5BD8A23C408 /* Pods-FluentConstraintsTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -463,12 +387,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lightyearsoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		40F6162F1A17C2630000825E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D34A33ECA3C6585B2EC4044 /* Pods-FluentConstraintsTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -478,6 +402,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lightyearsoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
