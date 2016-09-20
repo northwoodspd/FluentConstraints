@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FluentConstraints"
-  s.version      = "1.0"
+  s.version      = "2.0"
   s.summary      = "A nicer way to build Auto Layout constraints in Swift"
   s.homepage     = "https://github.com/northwoodspd/FluentConstraints"
   s.license      = 'MIT'
