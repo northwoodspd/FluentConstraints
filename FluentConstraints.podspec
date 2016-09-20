@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/northwoodspd/FluentConstraints"
   s.license      = 'MIT'
   s.author       = { "Steve Madsen" => "steve.madsen@teamnorthwoods.com" }
-  s.source       = { :git => "https://github.com/northwoodspd/FluentConstraints.git", :tag => '1.0' }
+  s.source       = { :git => "https://github.com/northwoodspd/FluentConstraints.git", :tag => '2.0' }
   s.platform     = :ios, '8.0'
   s.ios.frameworks = 'UIKit'
   s.source_files = 'FluentConstraints/*.swift'
