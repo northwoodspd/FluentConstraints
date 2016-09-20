@@ -8,10 +8,10 @@ env:
     - SCHEME="FluentConstraints"
     - SDK="iphonesimulator10.0"
   matrix:
-    - DESTINATION="OS=9.1,name=iPhone 5"
-    - DESTINATION="OS=9.1,name=iPhone 5s"
-    - DESTINATION="OS=8.4,name=iPhone 5"
-    - DESTINATION="OS=8.4,name=iPhone 5s"
+    - DESTINATION="OS=9.3,name=iPhone 5"
+    - DESTINATION="OS=9.3,name=iPhone 5s"
+    - DESTINATION="OS=10.0,name=iPhone 5"
+    - DESTINATION="OS=10.0,name=iPhone 5s"
 script:
   - set -o pipefail
   - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" test | xcpretty -c
