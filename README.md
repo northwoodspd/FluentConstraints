@@ -53,7 +53,8 @@ CocoaPods 0.36.0 or later is required to use Swift frameworks. You need to add `
 
     target 'YOUR APP TARGET HERE', :exclusive => true do
         ...
-        pod 'FluentConstraints'          # for Xcode 7 / Swift 2.0
+        pod 'FluentConstraints'          # for Xcode 8 / Swift 3.0
+        pod 'FluentConstraints', '1.0'   # for Xcode 7 / Swift 2.0
         pod 'FluentConstraints', '<1.0'  # for Xcode 6 / Swift 1.2
     end
 
@@ -77,8 +78,6 @@ If you'd like to contribute, please:
 * Make your changes
 * Please add tests for new functionality or less-than-trivial bug fixes
 * Send a pull request
-
-The tests are written with XCTest, but using the [Nimble](https://github.com/Quick/Nimble) matcher framework. You'll need to run `pod install` in your fork before running the tests.
 
 ## License
 
