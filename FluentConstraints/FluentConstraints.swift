@@ -23,7 +23,13 @@ open class FluentConstraint {
     }
 
     open func build() -> NSLayoutConstraint {
-        let constraint = NSLayoutConstraint(item: firstView, attribute: firstAttribute, relatedBy: relation, toItem: secondView, attribute: secondAttribute, multiplier: multiplier, constant: constant)
+        let constraint = NSLayoutConstraint(item: firstView,
+                                            attribute: firstAttribute,
+                                            relatedBy: relation,
+                                            toItem: secondView,
+                                            attribute: secondAttribute,
+                                            multiplier: multiplier,
+                                            constant: constant)
         constraint.priority = self.priority
         return constraint
     }
@@ -305,8 +311,14 @@ open class FluentConstraint {
 
     // MARK: priority
 
-    open func setPriority(_ priority: UILayoutPriority) -> FluentConstraint {
-        self.priority = priority
+    /**
+     * This member not available from an external module in Xcode 9 with the preferrable signature:
+     * `open func priority(_ priority: UILayoutPriority) -> FluentConstraint`
+     * Seems to possibly be tied to `UILayoutPriority` being in the signature,
+     * as putting `open` on the var `priority` exhibited the same behavior. 
+     */
+    open func priorityValue(_ priorityValue: Float) -> FluentConstraint {
+        self.priority = UILayoutPriority(rawValue: priorityValue)
         return self
     }
 

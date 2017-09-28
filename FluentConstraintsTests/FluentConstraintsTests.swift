@@ -252,7 +252,7 @@ class FluentConstraintsTests: XCTestCase {
     // MARK: priority
 
     func testPriority() {
-        let constraint = FluentConstraint(firstView).width.equalTo(10).setPriority(UILayoutPriority(rawValue: 750)).build()
+        let constraint = FluentConstraint(firstView).width.equalTo(10).priorityValue(750).build()
         XCTAssertEqual(constraint.priority, UILayoutPriority(rawValue: 750))
     }
 
