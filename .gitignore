@@ -1,1 +1,81 @@
+# Mac OS X
+.DS_Store
+
+# Xcode General
+build/
+DerivedData/
+
+# Artifacts
+*.xcarchive
+*.ipa
+*.dSYM.zip
+curl_output.txt
+
+# Xcode <= 3
+*.pbxuser
+!default.pbxuser
+*.mode1
+!default.mode1
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspective
+!default.perspective
+*.perspectivev3
+!default.perspectivev3
+
+# Xcode 4+
+*.xcuserstate
+*.xcuserdatad
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+
+# Generated files
+*.o
+*.out
+*.log
+Reports/*
+previous_build_number.txt
+scripts/objc-files.txt
+FluentConstraints.Docs.zip
+
+# Cocoapods
 Pods
+
+# ocunit2junit
+test-reports
+
+# OCLint
+compile_commands.json
+
+# Backup files
+*~.nib
+*.swp
+
+# From GitHub's Ignore File for Xcode Projects
+profile
+*.moved-aside
+
+# Avoid checking in Subversion metadata from copied directories
+.svn
+
+# Slender app output for backups
+SlenderBackup*
+
+# Jetbrains AppCode files
+.idea/
+
+# FauxPas config directory
+FauxPasConfig
+
+# Generated build info file
+InfoPlist.h
+
+# Documentation output
+Docs
+
+# SwiftLint files
+benchmark_*
+
