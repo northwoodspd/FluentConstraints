@@ -305,7 +305,7 @@ open class FluentConstraint {
 
     // MARK: priority
 
-    open func priority(_ priority: UILayoutPriority) -> FluentConstraint {
+    open func setPriority(_ priority: UILayoutPriority) -> FluentConstraint {
         self.priority = priority
         return self
     }
