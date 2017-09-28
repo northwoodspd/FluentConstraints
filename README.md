@@ -53,7 +53,8 @@ CocoaPods 0.36.0 or later is required to use Swift frameworks. You need to add `
 
     target 'YOUR APP TARGET HERE', :exclusive => true do
         ...
-        pod 'FluentConstraints'          # for Xcode 8 / Swift 3.0
+        pod 'FluentConstraints'          # for Xcode 9 / Swift 4.0
+        pod 'FluentConstraints'  '2.0'   # for Xcode 8 / Swift 3.0
         pod 'FluentConstraints', '1.0'   # for Xcode 7 / Swift 2.0
         pod 'FluentConstraints', '<1.0'  # for Xcode 6 / Swift 1.2
     end

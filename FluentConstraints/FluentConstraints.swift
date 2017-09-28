@@ -16,7 +16,7 @@ open class FluentConstraint {
     var secondAttribute = NSLayoutAttribute.notAnAttribute
     var multiplier: CGFloat = 1.0
     var constant: CGFloat = 0.0
-    var priority: UILayoutPriority = 1000.0
+    var priority: UILayoutPriority = UILayoutPriority(rawValue: 1000.0)
 
     public init(_ view: UIView) {
         self.firstView = view

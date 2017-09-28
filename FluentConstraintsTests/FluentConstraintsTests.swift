@@ -224,7 +224,7 @@ class FluentConstraintsTests: XCTestCase {
 
     func testMultiplierIsReciprocalWhenSpecifiedBeforeRelation() {
         let constraint = FluentConstraint(firstView).width.times(1.25).equalTo.height.build()
-        XCTAssertEqualWithAccuracy(constraint.multiplier, 1.0/1.25, accuracy: 0.0001)
+        XCTAssertEqual(constraint.multiplier, 1.0/1.25, accuracy: 0.0001)
     }
 
     // MARK: constant
@@ -252,13 +252,13 @@ class FluentConstraintsTests: XCTestCase {
     // MARK: priority
 
     func testPriority() {
-        let constraint = FluentConstraint(firstView).width.equalTo(10).priority(750).build()
-        XCTAssertEqual(constraint.priority, 750)
+        let constraint = FluentConstraint(firstView).width.equalTo(10).priority(UILayoutPriority(rawValue: 750)).build()
+        XCTAssertEqual(constraint.priority, UILayoutPriority(rawValue: UILayoutPriority.RawValue(750)))
     }
 
     func testDefaultPriorityIsRequired() {
         let constraint = FluentConstraint(firstView).width.equalTo(10).build()
-        XCTAssertEqual(constraint.priority, 1000)
+        XCTAssertEqual(constraint.priority, UILayoutPriority(rawValue: UILayoutPriority.RawValue(1000)))
     }
 
     // MARK: activate()
