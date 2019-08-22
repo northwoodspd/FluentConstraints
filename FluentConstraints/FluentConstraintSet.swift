@@ -46,7 +46,7 @@ open class FluentConstraintSet {
 
     // MARK: internal helpers
 
-    func fluentConstraintForView(_ view: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0, relation: NSLayoutRelation = .equal) -> FluentConstraint {
+    func fluentConstraintForView(_ view: UIView, attribute: NSLayoutConstraint.Attribute, constant: CGFloat = 0, relation: NSLayoutConstraint.Relation = .equal) -> FluentConstraint {
         let constraint = FluentConstraint(view)
         constraint.firstAttribute = attribute
         constraint.relation = relation

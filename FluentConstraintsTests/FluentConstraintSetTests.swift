@@ -62,37 +62,37 @@ class FluentConstraintSetTests: XCTestCase {
     func testCentered() {
         let constraints = FluentConstraintSet(firstView).centered.onView(secondView).build()
         XCTAssertEqual(constraints.count, 2);
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.centerX })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.centerY })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.centerX })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.centerY })
     }
 
     func testSameSize() {
         let constraints = FluentConstraintSet(firstView).sameSize.asView(secondView).build()
         XCTAssertEqual(constraints.count, 2);
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.width })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.height })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.width })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.height })
     }
 
     func testInset() {
         let insets = UIEdgeInsets(top: 1, left: 2, bottom: 3, right: 4)
         let constraints = FluentConstraintSet(firstView).inset(insets).onView(secondView).build()
         XCTAssertEqual(constraints.count, 4);
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.left && $0.constant == 2 })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.right && $0.constant == -4 })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.top && $0.constant == 1 })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.bottom && $0.constant == -3 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.left && $0.constant == 2 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.right && $0.constant == -4 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.top && $0.constant == 1 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.bottom && $0.constant == -3 })
     }
 
     func testInsetWithConstant() {
         let constraints = FluentConstraintSet(firstView).inset(10).onView(secondView).build()
         XCTAssertEqual(constraints.count, 4);
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.left && $0.constant == 10 })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.right && $0.constant == -10 })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.top && $0.constant == 10 })
-        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutAttribute.bottom && $0.constant == -10 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.left && $0.constant == 10 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.right && $0.constant == -10 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.top && $0.constant == 10 })
+        XCTAssert(constraints.contains() { $0.firstAttribute == NSLayoutConstraint.Attribute.bottom && $0.constant == -10 })
     }
 
-    func find(constraints: [NSLayoutConstraint], firstAttribute: NSLayoutAttribute, constant: CGFloat, relation: NSLayoutRelation) -> NSLayoutConstraint? {
+    func find(constraints: [NSLayoutConstraint], firstAttribute: NSLayoutConstraint.Attribute, constant: CGFloat, relation: NSLayoutConstraint.Relation) -> NSLayoutConstraint? {
         for constraint in constraints {
             if constraint.firstAttribute == firstAttribute && constraint.constant == constant && constraint.relation == relation {
                 return constraint
