@@ -10,10 +10,10 @@ import UIKit
 
 open class FluentConstraint {
     var firstView: UIView
-    var firstAttribute = NSLayoutAttribute.notAnAttribute
-    var relation = NSLayoutRelation.equal
+    var firstAttribute = NSLayoutConstraint.Attribute.notAnAttribute
+    var relation = NSLayoutConstraint.Relation.equal
     var secondView: UIView?
-    var secondAttribute = NSLayoutAttribute.notAnAttribute
+    var secondAttribute = NSLayoutConstraint.Attribute.notAnAttribute
     var multiplier: CGFloat = 1.0
     var constant: CGFloat = 0.0
     var priority: UILayoutPriority = UILayoutPriority(rawValue: 1000.0)

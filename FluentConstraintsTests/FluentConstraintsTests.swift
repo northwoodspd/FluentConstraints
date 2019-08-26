@@ -32,129 +32,129 @@ class FluentConstraintsTests: XCTestCase {
 
     func testLeftAttribute() {
         let constraint = FluentConstraint(firstView).left.equalTo(secondView).left.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.left)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.left)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.left)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.left)
     }
 
     func testRightAttribute() {
         let constraint = FluentConstraint(firstView).right.equalTo(secondView).right.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.right)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.right)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.right)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.right)
     }
 
     func testTopAttribute() {
         let constraint = FluentConstraint(firstView).top.equalTo(secondView).top.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.top)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.top)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.top)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.top)
     }
 
     func testBottomAttribute() {
         let constraint = FluentConstraint(firstView).bottom.equalTo(secondView).bottom.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.bottom)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.bottom)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.bottom)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.bottom)
     }
 
     func testLeadingAttribute() {
         let constraint = FluentConstraint(firstView).leading.equalTo(secondView).leading.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.leading)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.leading)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.leading)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.leading)
     }
 
     func testTrailingAttribute() {
         let constraint = FluentConstraint(firstView).trailing.equalTo(secondView).trailing.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.trailing)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.trailing)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.trailing)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.trailing)
     }
 
     func testWidthAttribute() {
         let constraint = FluentConstraint(firstView).width.equalTo(secondView).width.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.width)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.width)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.width)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.width)
     }
 
     func testHeightAttribute() {
         let constraint = FluentConstraint(firstView).height.equalTo(secondView).height.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.height)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.height)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.height)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.height)
     }
 
     func testCenterXAttribute() {
         let constraint = FluentConstraint(firstView).centerX.equalTo(secondView).centerX.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerX)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerX)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerX)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerX)
     }
 
     func testCenterYAttribute() {
         let constraint = FluentConstraint(firstView).centerY.equalTo(secondView).centerY.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerY)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerY)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerY)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerY)
     }
 
     func testLastBaselineAttribute() {
         let constraint = FluentConstraint(firstView).lastBaseline.equalTo(secondView).lastBaseline.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.lastBaseline)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.lastBaseline)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.lastBaseline)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.lastBaseline)
     }
 
     func testFirstBaselineAttribute() {
         let constraint = FluentConstraint(firstView).firstBaseline.equalTo(secondView).firstBaseline.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.firstBaseline)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.firstBaseline)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.firstBaseline)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.firstBaseline)
     }
 
     func testLeftMarginAttribute() {
         let constraint = FluentConstraint(firstView).leftMargin.equalTo(secondView).leftMargin.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.leftMargin)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.leftMargin)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.leftMargin)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.leftMargin)
     }
 
     func testRightMarginAttribute() {
         let constraint = FluentConstraint(firstView).rightMargin.equalTo(secondView).rightMargin.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.rightMargin)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.rightMargin)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.rightMargin)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.rightMargin)
     }
 
     func testTopMarginAttribute() {
         let constraint = FluentConstraint(firstView).topMargin.equalTo(secondView).topMargin.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.topMargin)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.topMargin)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.topMargin)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.topMargin)
     }
 
     func testBottomMarginAttribute() {
         let constraint = FluentConstraint(firstView).bottomMargin.equalTo(secondView).bottomMargin.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.bottomMargin)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.bottomMargin)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.bottomMargin)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.bottomMargin)
     }
 
     func testLeadingMarginAttribute() {
         let constraint = FluentConstraint(firstView).leadingMargin.equalTo(secondView).leadingMargin.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.leadingMargin)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.leadingMargin)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.leadingMargin)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.leadingMargin)
     }
 
     func testTrailingMarginAttribute() {
         let constraint = FluentConstraint(firstView).trailingMargin.equalTo(secondView).trailingMargin.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.trailingMargin)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.trailingMargin)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.trailingMargin)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.trailingMargin)
     }
 
     func testCenterXWithinMarginsAttribute() {
         let constraint = FluentConstraint(firstView).centerXWithinMargins.equalTo(secondView).centerXWithinMargins.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerXWithinMargins)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerXWithinMargins)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerXWithinMargins)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerXWithinMargins)
     }
 
     func testCenterYWithinMarginsAttribute() {
         let constraint = FluentConstraint(firstView).centerYWithinMargins.equalTo(secondView).centerYWithinMargins.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerYWithinMargins)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerYWithinMargins)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerYWithinMargins)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerYWithinMargins)
     }
 
     // MARK: relation tests
 
     func testEqualToRelation() {
         let constraint = FluentConstraint(firstView).top.equalTo(secondView).top.build()
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.equal)
+        XCTAssertEqual(constraint.relation, NSLayoutConstraint.Relation.equal)
     }
 
     func testEqualToArgumentIsView() {
@@ -175,7 +175,7 @@ class FluentConstraintsTests: XCTestCase {
 
     func testGreaterThanOrEqualToRelation() {
         let constraint = FluentConstraint(firstView).top.greaterThanOrEqualTo(secondView).top.build()
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.greaterThanOrEqual)
+        XCTAssertEqual(constraint.relation, NSLayoutConstraint.Relation.greaterThanOrEqual)
     }
 
     func testGreaterThanOrEqualToArgumentIsView() {
@@ -196,7 +196,7 @@ class FluentConstraintsTests: XCTestCase {
 
     func testLessThanOrEqualToRelation() {
         let constraint = FluentConstraint(firstView).top.lessThanOrEqualTo(secondView).top.build()
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.lessThanOrEqual)
+        XCTAssertEqual(constraint.relation, NSLayoutConstraint.Relation.lessThanOrEqual)
     }
 
     func testLessThanOrEqualToArgumentIsView() {
@@ -277,35 +277,35 @@ class FluentConstraintsTests: XCTestCase {
 
     func testCenteredHorizontallyOn() {
         let constraint = FluentConstraint(firstView).centeredHorizontallyOn(secondView).build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerX)
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.equal)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerX)
+        XCTAssertEqual(constraint.relation, NSLayoutConstraint.Relation.equal)
         XCTAssertEqual(constraint.secondItem as? UIView, secondView)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerX)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerX)
     }
 
     func testCenteredHorizontallyInSuperview() {
         secondView.addSubview(firstView)
         let constraint = FluentConstraint(firstView).centeredHorizontallyInSuperview.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerX)
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.equal)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerX)
+        XCTAssertEqual(constraint.relation, NSLayoutConstraint.Relation.equal)
         XCTAssertEqual(constraint.secondItem as? UIView, secondView)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerX)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerX)
     }
 
     func testCenteredVerticallyOn() {
         let constraint = FluentConstraint(firstView).centeredVerticallyOn(secondView).build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerY)
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.equal)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerY)
+        XCTAssertEqual(constraint.relation, NSLayoutConstraint.Relation.equal)
         XCTAssertEqual(constraint.secondItem as? UIView, secondView)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerY)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerY)
     }
 
     func testCenteredVerticallyInSuperview() {
         secondView.addSubview(firstView)
         let constraint = FluentConstraint(firstView).centeredVerticallyInSuperview.build()
-        XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.centerY)
-        XCTAssertEqual(constraint.relation, NSLayoutRelation.equal)
+        XCTAssertEqual(constraint.firstAttribute, NSLayoutConstraint.Attribute.centerY)
+        XCTAssertEqual(constraint.relation, NSLayoutConstraint.Relation.equal)
         XCTAssertEqual(constraint.secondItem as? UIView, secondView)
-        XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.centerY)
+        XCTAssertEqual(constraint.secondAttribute, NSLayoutConstraint.Attribute.centerY)
     }
 }
